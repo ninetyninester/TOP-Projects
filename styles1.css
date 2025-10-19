@@ -1,0 +1,32 @@
+h2{
+    color: red;
+    background-color: white;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ol{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+*{
+    background-color: whitesmoke;
+}
+
+.special-color{
+    color: purple;
+}
+
+.bg-color{
+    background-color: white;
+}
+
+#subtitle{
+    background-color: aqua;
+}
+
+/* coments command (the CTRL / also works out)

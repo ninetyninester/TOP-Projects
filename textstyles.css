@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+p,
+ul {
+  border: 2px solid rebeccapurple;
+  padding: 0.2em;
+}
+
+.block,
+li {
+  border: 2px solid blue;
+  padding: 0.2em;
+}
+
+ul{
+  display: inline grid;
+  list-style: none;
+}
+
+ol{
+  display: inline flex;
+}
+
+.block {
+  display: block;
+}
