@@ -14,6 +14,9 @@ function getHumanChoice(){
     return input.trim().toLowerCase();
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
 function playRound(humanChoice,computerChoice){
 
     if(humanChoice==computerChoice){
@@ -32,9 +35,6 @@ function playRound(humanChoice,computerChoice){
         return `You lose! ${computerChoice} beats ${humanChoice}.`;
     }
 }
-
-let humanScore = 0;
-let computerScore = 0;
 
 function playGame (){
     for(let i=1; i<=5;i++){
