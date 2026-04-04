@@ -1,0 +1,39 @@
+.title{
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    color: mediumblue;
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.subtitle{
+    font-family: 'Courier New', Courier, monospace;
+    color: mediumblue;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.rock, .paper, .scissors{
+    box-sizing: border-box;
+    font-size: large;
+    height: 50px;
+    width: 100px;
+}
+
+.result{
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+}
