@@ -17,8 +17,7 @@
 
 .button{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 30px;
 }
 
@@ -36,4 +35,16 @@
     display: flex;
     justify-content: center;
     padding: 20px 10px;
+}
+
+.resetGame {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.reset{
+    box-sizing: border-box;
+    font-size:small;
+    padding: 5px;
 }
