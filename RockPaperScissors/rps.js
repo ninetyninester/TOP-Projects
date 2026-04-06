@@ -1,61 +1,70 @@
-// functions
+function getComputerChoice() {
+    let hand = Math.ceil(Math.random() * 3);
+    if (hand == 1) return "rock";
+    else if (hand == 2) return "paper";
+    else return "scissors";
+}
 
-// convert the output - number to string
+let humanScore = 0;
+let computerScore = 0;
 
-function handConverter(hand){
-    if(hand==1){
-        return 'Rock'
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice == computerChoice) 
+    {
+        return "Draw!<br>";
+    } 
+    else if (
+              (humanChoice == "rock" && computerChoice == "scissors") ||
+              (humanChoice == "paper" && computerChoice == "rock") ||
+              (humanChoice == "scissors" && computerChoice == "paper")
+            )
+    {
+        humanScore++;
+        return `You win! ${humanChoice} beats ${computerChoice}.<br>`;
     }
-    else if(hand==2){
-        return 'Paper'
+     else
+     {
+        computerScore++;
+        return `You lose! ${computerChoice} beats ${humanChoice}.<br>`;
+     }
+}
+
+function showScore (){
+
+    if(humanScore>=5){
+    return `You: ${humanScore}<br>Computer: ${computerScore} <br> <br> Congratulation, you won the game!!!<br><br>Thanks for playing.`;
     }
-    else if(hand==3){
-        return 'Scissors'
+    else if (computerScore>=5){
+    return `You: ${humanScore}<br>Computer: ${computerScore} <br> <br> Sorry, you lose...<br><br>Thanks for playing.`;
     }
+    else return `You: ${humanScore}<br>Computer: ${computerScore}`;
+};
+
+function isGameOver(){
+    return humanScore >=5 || computerScore >=5;
 }
 
-// players input
+// Display on page
 
-function getPlayerChoice(playerInput){
+let resultDiv = document.createElement("div");
+document.body.appendChild(resultDiv);
 
-playerInput = prompt("Please enter yout option 1-Rock / 2-paper / 3-Scissors: ")
+resultDiv.classList.add("result")
 
-    if(playerInput==1 || playerInput==2 || playerInput==3){
-        return playerInput
-        }
-    else{
-        alert('Please, enter 1, 2 or 3.')
-        playerInput = prompt("Please enter yout option 1-Rock / 2-paper / 3-Scissors: ")
-        }
-    }
+document.querySelector(".rock").addEventListener("click", () => {
+    if(isGameOver()) return;
+    resultDiv.innerHTML = `${playRound("rock", getComputerChoice())}<br>${showScore()}`;
+});
 
-// computer's input
+document.querySelector(".paper").addEventListener("click", () => {
+    if(isGameOver()) return;
+    resultDiv.innerHTML = `${playRound("paper", getComputerChoice())}<br>${showScore()}`;
+});
 
-function getComputerChoice (max){
-    return Math.ceil(Math.random()*max)
+document.querySelector(".scissors").addEventListener("click", () => {
+    if(isGameOver()) return;
+    resultDiv.innerHTML = `${playRound("scissors", getComputerChoice())}<br>${showScore()}`;
+});
 
-}
-
-// outcome
-
-function outcome(){
-
-
-if(playerInput==computerInput){
-    result = 'Draw'
-}
-
-else if(playerInput==1 && computerInput==3 || playerInput==2 && computerInput==1 || playerInput==3 && computerInput==2){
-    result = `You Win!`
-    beats = `${handConverter(playerInput)} beats ${handConverter(computerInput)}!`
-}
-
-else{
-    result = `You Lose!`
-    beats = `${handConverter(computerInput)} beats ${handConverter(playerInput)}!`} 
-}
-
-getPlayerChoice()
-getComputerChoice()
-computerInput = getComputerChoice (3)
-console.log(result,beats)
+document.querySelector(".reset").addEventListener("click", () => {
+    location.reload();});
